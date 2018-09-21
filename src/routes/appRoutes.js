@@ -34,5 +34,6 @@ const routes = (app) => {
     ], user.register);
 
     app.route('/login').post(user.login);
+    return app;
 }
 module.exports = routes;

@@ -4,7 +4,8 @@
   "description": "building restfull api's using nodejs and express",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [
     "nodejs",
@@ -13,11 +14,16 @@
   "author": "balaji hambeere",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-validator": "^5.3.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.14"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "rewire": "^4.0.1",
+    "supertest": "^3.3.0"
   }
 }
