@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var UserSchema = require('../models/userModel');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
 const { validationResult } = require('express-validator/check');
