@@ -4,7 +4,9 @@
   "description": "building restfull api's using nodejs and express",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nyc mocha",
+    "prestart": "grunt",
+    "start": "nodemon node app"
   },
   "keywords": [
     "nodejs",
@@ -22,7 +24,12 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "grunt": "^1.0.3",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "nyc": "^13.0.1",
     "rewire": "^4.0.1",
     "supertest": "^3.3.0"
   }

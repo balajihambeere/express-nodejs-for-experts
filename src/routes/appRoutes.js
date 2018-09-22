@@ -1,6 +1,7 @@
+"use strict";
 var customer = require('../controllers/customerController');
 
-var user = require('../controllers/userController')
+var user = require('../controllers/userController');
 
 const { check } = require('express-validator/check');
 
@@ -35,5 +36,6 @@ const routes = (app) => {
 
     app.route('/login').post(user.login);
     return app;
-}
+};
+
 module.exports = routes;

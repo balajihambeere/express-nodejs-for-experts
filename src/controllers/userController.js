@@ -1,9 +1,10 @@
+"use strict";
 var mongoose = require('mongoose');
 var UserSchema = require('../models/userModel');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
-const { validationResult } = require('express-validator/check');
+var validationResult = require('express-validator/check');
 
 const User = mongoose.model('User', UserSchema);
 
@@ -23,12 +24,12 @@ const register = (request, response) => {
             response.json(user);
         }
     });
-}
+};
 
 const login = (request, response) => {
     User.findOne({ username: request.body.username }, (error, user) => {
         if (error) {
-            throw err;
+            throw error;
         }
         if (!user) {
             response.status(401).json({ message: 'Authentication failed. No user found!' });
@@ -41,7 +42,7 @@ const login = (request, response) => {
             }
         }
     });
-}
+};
 
 const isAuthenticated = (request, response, next) => {
     if (request.user) {
@@ -49,10 +50,10 @@ const isAuthenticated = (request, response, next) => {
     } else {
         return response.status(401).json({ message: 'Unauthorized user!' });
     }
-}
+};
 
 module.exports = {
     register,
     login,
     isAuthenticated
-}
+};

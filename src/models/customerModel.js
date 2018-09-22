@@ -1,8 +1,9 @@
+"use strict";
 var mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
-const CustomerSchema = new Schema({
+var CustomerSchema = new Schema({
     firstName: {
         type: String,
         required: 'Enter a first name'
@@ -19,6 +20,6 @@ const CustomerSchema = new Schema({
         type: String,
         required: 'Enter a email address'
     }
-})
+});
 
 module.exports = CustomerSchema;

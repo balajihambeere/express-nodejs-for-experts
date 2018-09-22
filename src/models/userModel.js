@@ -1,8 +1,9 @@
+"use strict";
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-const Schema = mongoose.Schema;
-const UserSchema = new Schema({
+var Schema = mongoose.Schema;
+var UserSchema = new Schema({
     username: {
         type: String,
         required: true
@@ -15,6 +16,6 @@ const UserSchema = new Schema({
 
 UserSchema.methods.comparePassword = (requestedPassword, password) => {
     return bcrypt.compareSync(requestedPassword, password);
-}
+};
 
 module.exports = UserSchema;
