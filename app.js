@@ -8,7 +8,7 @@ var app = new express();
 
 const PORT = 3000;
 
-mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise
 
 const options = { useNewUrlParser: true };
 
