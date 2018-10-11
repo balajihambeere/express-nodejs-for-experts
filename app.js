@@ -1,14 +1,17 @@
 "use strict";
 var express = require('express');
+var cors = require('cors');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var routes = require('./src/routes/appRoutes');
 var jsonwebtoken = require('jsonwebtoken');
 var app = new express();
 
+app.use(cors());
+
 const PORT = 3000;
 
-mongoose.Promise = global.Promise
+mongoose.Promise = global.Promise;
 
 const options = { useNewUrlParser: true };
 

@@ -14,27 +14,27 @@ const createCustomer = (request, response) => {
     let customer = new Customer(request.body);
     customer.save((error, customer) => {
         if (error) {
-            response.send(error);
+            return response.send(error);
         }
-        response.json(customer);
+        return response.json(customer);
     });
 };
 
 const getCustomers = (request, response) => {
     Customer.find({}, (error, customer) => {
         if (error) {
-            response.send(error);
+            return response.send(error);
         }
-        response.json(customer);
+        return response.json(customer);
     });
 };
 
 const getCustomerById = (request, response) => {
     Customer.findById({ _id: request.params.customerId }, (error, customer) => {
         if (error) {
-            response.send(error);
+            return response.send(error);
         }
-        response.json(customer);
+        return response.json(customer);
     });
 };
 
@@ -46,18 +46,18 @@ const updateCustomer = (request, response) => {
     Customer.findOneAndUpdate({ _id: request.params.customerId }, request.body, { new: true },
         (error, customer) => {
             if (error) {
-                response.send(error);
+                return response.send(error);
             }
-            response.json(customer);
+            return response.json(customer);
         });
 };
 
 const deleteCustomer = (request, response) => {
     Customer.deleteOne({ _id: request.params.customerId }, (error, customer) => {
         if (error) {
-            response.send(error);
+            return response.send(error);
         }
-        response.json(customer);
+        return response.json(customer);
     });
 };
 
